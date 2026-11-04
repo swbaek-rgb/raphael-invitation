@@ -255,9 +255,10 @@ html.reduced .reveal{ opacity:1 !important; transform:none !important; }
 /* film */
 .film{ background:linear-gradient(to bottom, var(--bg), var(--bg-2)); }
 .film__grid{ display:grid; gap:40px; }
-.film__left{ display:grid; gap:24px; align-content:start; }
+.film__head{ display:grid; gap:24px; align-content:start; }
 .film__intro{ display:grid; gap:10px; }
-.film__left > .eyebrow{ margin-bottom:0; }
+.film__intro-text{ display:grid; gap:10px; }
+.film__head > .eyebrow{ margin-bottom:0; }
 .film__intro-title{ margin:0 0 4px; font-size:clamp(18px,2.2vw,21px); font-weight:300; color:var(--gold-light); letter-spacing:-.01em; }
 .film__intro p{ margin:0; font-size:14px; line-height:1.7; color:var(--text-2); }
 .film__awards{ list-style:none; margin:10px 0 0; padding:14px 0 0; border-top:1px solid var(--line); display:grid; gap:6px; font-size:13.5px; line-height:1.65; color:var(--text); }
@@ -396,8 +397,13 @@ legend .opt{ font-size:12px; color:var(--muted); letter-spacing:.06em; margin-le
   .invite .wrap{ grid-template-columns:1.1fr .9fr; align-items:start; gap:80px; }
   .invite__aside{ display:grid; gap:0; align-self:start; }
   .timeline li{ grid-template-columns:32px 1fr; padding:28px 0; }
-  .film__grid{ grid-template-columns:.9fr 1.1fr; gap:72px; align-items:start; }
-  .film__right{ padding-top:46px; }  /* 왼쪽 소제목 높이만큼 내려 기준선 맞춤 */
+  /* 2행 그리드: 1행 = 소개 블록(왼쪽), 2행 = 포스터(왼쪽) + 시놉시스·정보(오른쪽, 포스터 윗선과 정렬) */
+  .film__grid{ grid-template-columns:.9fr 1.1fr; grid-template-rows:auto auto; column-gap:72px; row-gap:40px; align-items:start; }
+  .film__head{ grid-column:1 / -1; grid-row:1; }
+  .film__intro{ grid-template-columns:.9fr 1.1fr; column-gap:72px; align-items:start; }   /* 소개 글 | 선정 내역 가로 배치 (아래 포스터/시놉시스 열과 같은 비율) */
+  .film__awards{ margin:0; padding:0 0 0 0; border-top:0; padding-top:4px; }
+  .film__visual{ grid-column:1; grid-row:2; }
+  .film__right{ grid-column:2; grid-row:2; }
   .film__visual{ aspect-ratio:2780/3961; }  /* 세로 포스터 원본 비율 → 잘림·여백 없음 */
   .rsvp .wrap{ display:grid; grid-template-columns:.8fr 1.2fr; gap:80px; align-items:start; }
   .rsvp__head{ position:sticky; top:120px; }
@@ -611,18 +617,21 @@ legend .opt{ font-size:12px; color:var(--muted); letter-spacing:.06em; margin-le
   <!-- ========== FILM ========== -->
   <section class="sec film" id="film" aria-labelledby="film-title">
     <div class="wrap film__grid">
-      <div class="film__left">
+      <div class="film__head">
         <p class="eyebrow reveal">About the Film</p>
         <div class="film__intro reveal">
-          <h3 class="film__intro-title">AI 기술력이 증명한 차세대 시네마</h3>
-          <p>100% 생성형 AI 기술로 거대한 미래 세계관을 구현한 극장용 상업 장편영화.</p>
-          <p>1년 2개월간 컷 단위의 정교한 이미지 및 영상 후보정을 거쳐 캐릭터의 일관성과 밀도 높은 미장센을 완성하다.</p>
+          <div class="film__intro-text">
+            <h3 class="film__intro-title">AI 기술력이 증명한 차세대 시네마</h3>
+            <p>100% 생성형 AI 기술로 거대한 미래 세계관을 구현한 극장용 상업 장편영화.</p>
+            <p>1년 2개월간 컷 단위의 정교한 이미지 및 영상 후보정을 거쳐 캐릭터의 일관성과 밀도 높은 미장센을 완성하다.</p>
+          </div>
           <ul class="film__awards">
             <li>문화체육관광부 주최 · 한국콘텐츠진흥원 주관<br>2025 AI 영상제작지원사업 선정</li>
             <li>2025 제2회 부산국제AI영화제 개막작</li>
             <li>2026 칸 국제영화제 마켓 ‘마르셰 뒤 필름’ Kling AI 콘퍼런스 공식 초청</li>
           </ul>
         </div>
+      </div>
       <figure class="film__visual reveal" style="margin:0">
         <!-- 히어로와 반대 방향의 포스터: 모바일은 가로 스틸, 데스크톱은 세로 포스터 -->
         <picture>
@@ -634,7 +643,6 @@ legend .opt{ font-size:12px; color:var(--muted); letter-spacing:.06em; margin-le
                alt="영화 라파엘 가로 포스터. 석양을 등지고 무릎 꿇은 안드로이드와 망토를 두른 소녀가 마주 보고 있다. '돌아올게 약속해'.">
         </picture>
       </figure>
-      </div>
       <div class="film__right">
         <h2 class="synopsis__open" id="film-title" data-split>2050년, 기후 재난과 전쟁으로 무너진 세계.</h2>
         <div class="synopsis reveal">
