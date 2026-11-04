@@ -1,0 +1,1091 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>라파엘 | 시사회 초대장</title>
+<meta name="description" content="AI 블록버스터 영화 〈라파엘〉 시사회에 초대합니다. 11월 18일(수) 오후 7:40, 롯데시네마 월드타워 (상영관 추후 안내).">
+<meta name="theme-color" content="#070605">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Crect width=%2764%27 height=%2764%27 rx=%2712%27 fill=%27%23070605%27/%3E%3Ctext x=%2732%27 y=%2743%27 font-family=%27Georgia,serif%27 font-size=%2734%27 text-anchor=%27middle%27 fill=%27%23e2c285%27%3ER%3C/text%3E%3C/svg%3E">
+<meta property="og:title" content="라파엘 | 시사회 초대장">
+<meta property="og:description" content="11월 18일(수) 오후 7:40 롯데시네마 월드타워. 11월 25일 개봉작 〈라파엘〉 시사회에 초대합니다.">
+<meta property="og:image" content="assets/poster-landscape-1280.jpg">
+<meta property="og:type" content="website">
+
+<!--
+  ASSET PROVENANCE
+  - 포스터 이미지(assets/poster-*): 영화 〈라파엘〉 공식 포스터. 제작 마테오AI스튜디오, MBC C&I AI Contents Lab. 사용자 제공.
+  - 카피: 공식 초대 페이지(attention-to.kr/Raphael/INVI/INVI01.html)의 정보를 바탕으로 재작성.
+  - 서체: Pretendard (SIL OFL, jsDelivr), Jost (SIL OFL, Google Fonts)
+  - 아이콘: Solar Icons (CC BY 4.0) via Iconify
+  - 모션: GSAP 3 + ScrollTrigger, Lenis (단일 스무스 스크롤 엔진). Three.js 미사용.
+-->
+
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400&display=swap">
+<link rel="preload" as="image" href="assets/layers/m-bg.webp" media="(max-width: 899px)" fetchpriority="high">
+<link rel="preload" as="image" href="assets/layers/bg.webp" media="(min-width: 900px)" fetchpriority="high">
+<link rel="preload" as="image" href="assets/layers/title.webp" media="(min-width: 900px)">
+
+<style>
+/* ---------- tokens ---------- */
+:root{
+  --ink:#070605;
+  --bg:#0c0a08;
+  --bg-2:#14110c;
+  --bg-3:#1d1812;
+  --sand:#c8a461;
+  --gold:#e2c285;
+  --gold-light:#f4e4c1;
+  --bronze:#7d6141;
+  --steel:#5b86a3;
+  --text:#ece3d3;
+  --text-2:#bfb3a0;
+  --muted:#8e8370;
+  --line:rgba(226,194,133,.22);
+  --line-strong:rgba(226,194,133,.5);
+  --danger:#d9826a;
+  --font-kr:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo",system-ui,sans-serif;
+  --font-en:"Jost",var(--font-kr);
+  --ease-out:cubic-bezier(.16,1,.3,1);
+  --gutter:clamp(20px,5vw,72px);
+  --maxw:1180px;
+  --dvh:100vh;
+}
+@supports (height:100dvh){ :root{ --dvh:100dvh; } }
+
+/* ---------- base ---------- */
+*,*::before,*::after{ box-sizing:border-box; }
+html{ background:var(--ink); color:var(--text); -webkit-text-size-adjust:100%; scroll-behavior:auto; }
+html.lenis{ height:auto; }
+.lenis.lenis-smooth{ scroll-behavior:auto !important; }
+body{
+  margin:0; font-family:var(--font-kr); font-weight:300; line-height:1.7;
+  font-size:16px; letter-spacing:-.005em; word-break:keep-all; overflow-wrap:anywhere;
+  -webkit-font-smoothing:antialiased; -webkit-tap-highlight-color:transparent;
+  overscroll-behavior-y:none; background:var(--ink);
+}
+img,picture{ display:block; max-width:100%; }
+a{ color:inherit; text-decoration:none; }
+button,input{ font:inherit; color:inherit; }
+button{ cursor:pointer; background:none; border:0; padding:0; -webkit-user-select:none; user-select:none; touch-action:manipulation; }
+:focus{ outline:none; }
+:focus-visible{ outline:2px solid var(--gold); outline-offset:3px; border-radius:2px; }
+
+.skip{ position:fixed; left:12px; top:-60px; z-index:100; background:var(--gold); color:var(--ink); padding:10px 14px; font-weight:500; border-radius:4px; transition:top .2s; }
+.skip:focus{ top:12px; }
+
+.en{ font-family:var(--font-en); }
+.eyebrow{
+  font-family:var(--font-en); font-weight:300; font-size:11px; letter-spacing:.34em; text-transform:uppercase;
+  color:var(--sand); display:flex; align-items:center; gap:14px; margin:0 0 22px;
+}
+.eyebrow::before{ content:""; width:28px; height:1px; background:var(--line-strong); flex:none; }
+
+.wrap{ width:min(100% - var(--gutter)*2, var(--maxw)); margin-inline:auto; }
+
+/* ---------- topbar ---------- */
+.topbar{
+  position:fixed; inset:0 0 auto 0; z-index:50; display:flex; align-items:center; justify-content:space-between;
+  padding:calc(12px + env(safe-area-inset-top)) var(--gutter) 12px;
+  background:linear-gradient(to bottom, rgba(7,6,5,.55), rgba(7,6,5,0));
+  pointer-events:none;
+  transition:background .3s, padding .3s;
+}
+/* 블러는 별도 레이어로: 아래쪽으로 갈수록 마스크로 사라져 경계가 생기지 않음 */
+.topbar::before{
+  content:""; position:absolute; inset:0 0 -24px 0; z-index:-1; pointer-events:none;
+  backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px);
+  -webkit-mask-image:linear-gradient(to bottom, #000 0%, #000 55%, transparent 100%);
+  mask-image:linear-gradient(to bottom, #000 0%, #000 55%, transparent 100%);
+}
+.topbar > *{ pointer-events:auto; }
+.topbar__brand{ font-family:var(--font-en); font-weight:300; letter-spacing:.42em; font-size:13px; color:var(--gold-light); padding-left:.42em; white-space:nowrap; }
+.topbar__tag{
+  display:inline-flex; align-items:center; gap:10px; font-family:var(--font-en); font-weight:300; font-size:11px;
+  letter-spacing:.32em; text-transform:uppercase; color:var(--gold-light); padding-left:.32em; min-height:40px; white-space:nowrap;
+}
+.topbar__tag i{ display:none; width:18px; height:1px; background:var(--gold); opacity:.7; }
+@media (max-width:899px){ .topbar__tag{ font-size:10px; letter-spacing:.2em; padding-left:.2em; } }
+@media (min-width:900px){ .topbar__tag i{ display:block; } }
+.topbar__cta{
+  font-size:13px; font-weight:400; letter-spacing:.02em; color:var(--gold-light);
+  border:1px solid var(--line-strong); border-radius:999px; padding:9px 16px; min-height:40px; display:inline-flex; align-items:center; gap:6px;
+  backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); background:rgba(12,10,8,.35);
+  transition:background .25s, border-color .25s, color .25s;
+}
+.topbar__cta:hover{ background:var(--gold); color:var(--ink); border-color:var(--gold); }
+.topbar__cta:active{ transform:scale(.97); }
+.topbar.is-scrolled{ background:rgba(7,6,5,.72); padding-top:calc(8px + env(safe-area-inset-top)); padding-bottom:8px; }
+.topbar.is-scrolled::before{ inset:0; -webkit-mask-image:none; mask-image:none; }
+.topbar.is-scrolled .topbar__tag{ color:var(--gold); }
+html.js .topbar{ opacity:0; }
+
+/* ---------- hero ---------- */
+.hero{
+  position:relative; height:var(--dvh); min-height:560px; overflow:hidden; background:var(--ink);
+  isolation:isolate;
+}
+.hero__m{ position:absolute; inset:0; }
+.mlayer{ position:absolute; will-change:transform; }
+.mlayer--bg{ inset:0; z-index:1; overflow:hidden; }
+.mlayer--bg .mlayer__in{ position:absolute; inset:-5% 0; will-change:transform; }  /* 스크롤 이동 여유 */
+.mlayer--bg img{ width:100%; height:100%; object-fit:cover; object-position:50% 42%; }
+.mlayer--fade{
+  inset:0; z-index:2; pointer-events:none;
+  background:
+    linear-gradient(to bottom, var(--ink) 0%, rgba(7,6,5,.6) 8%, rgba(7,6,5,0) 22%),
+    linear-gradient(to top, var(--ink) 0%, rgba(7,6,5,.88) 10%, rgba(7,6,5,.35) 24%, rgba(7,6,5,0) 40%);
+}
+.mlayer--tagline{ z-index:6; left:19%; width:62%; top:calc(9% + env(safe-area-inset-top)); aspect-ratio:753/57; }
+.mlayer--title{ z-index:6; left:8%; width:84%; top:calc(58% + 50px); aspect-ratio:1318/359; filter:drop-shadow(0 12px 28px rgba(0,0,0,.5)); }
+.mlayer picture img, .mlayer img{ width:100%; height:100%; display:block; }
+html.js .mlayer--bg, html.js .mlayer--tagline, html.js .mlayer--title{ opacity:0; }
+.hero__layers{ position:absolute; inset:0; display:none; } /* z-index 없음: 자식 레이어가 각자 z축을 가짐 */
+.layer{ position:absolute; inset:0; will-change:transform; z-index:1; }
+.layer--tagline, .layer--title{ z-index:6; } /* 먼지(2)·스크림(3)·안내 문구(4)보다 앞 */
+.layer__in{ position:absolute; inset:0; will-change:transform; }
+.layer picture{ position:absolute; inset:0; transform:scale(var(--s,1.04)); transform-origin:50% 55%; }
+.layer img{ width:100%; height:100%; object-fit:cover; object-position:50% 50%; }
+.layer--bg{ --s:1.06; }
+.layer--title{ --s:1.05; filter:drop-shadow(0 18px 40px rgba(0,0,0,.45)); }
+html.js .layer{ opacity:0; }
+.sr-only{ position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; }
+.hero__dust{ position:absolute; inset:0; z-index:2; width:100%; height:100%; pointer-events:none; mix-blend-mode:screen; opacity:.9; }
+.hero__scrim{
+  display:none; position:absolute; inset:0; z-index:3; pointer-events:none;
+  background:
+    linear-gradient(to bottom, rgba(7,6,5,.55) 0%, rgba(7,6,5,0) 26%),
+    linear-gradient(to top, rgba(7,6,5,.92) 0%, rgba(7,6,5,.35) 22%, rgba(7,6,5,0) 48%);
+}
+.hero__vignette{
+  position:absolute; inset:-2px; z-index:3; pointer-events:none;
+  background:radial-gradient(120% 90% at 50% 45%, rgba(7,6,5,0) 55%, rgba(7,6,5,.55) 100%);
+}
+.hero__eyebrow{
+  position:absolute; z-index:4; left:0; right:0; top:var(--eyebrow-top, 76%);
+  display:flex; justify-content:center; align-items:center; gap:14px;
+  font-family:var(--font-kr); font-weight:300; font-size:13px; letter-spacing:.14em; color:var(--gold-light);
+  padding-inline:var(--gutter); white-space:nowrap;
+}
+.hero__eyebrow i{ display:block; width:36px; height:1px; background:var(--gold); opacity:.75; transform-origin:center; }
+html.js .hero__eyebrow span, html.js .hero__eyebrow i{ opacity:0; }
+
+.hero__cue{
+  position:absolute; z-index:4; left:50%; bottom:calc(22px + env(safe-area-inset-bottom)); transform:translateX(-50%);
+  display:flex; flex-direction:column; align-items:center; gap:10px;
+  font-family:var(--font-en); font-weight:300; font-size:11px; letter-spacing:.32em; text-transform:uppercase; color:var(--gold-light);
+  padding:12px 18px; min-height:44px;
+}
+.hero__cue[hidden]{ display:none; }
+.hero__cue .cue-kr{ display:none; font-family:var(--font-kr); font-weight:300; letter-spacing:.08em; font-size:12px; color:var(--text-2); }
+.hero__cue .cue-line{ width:1px; height:28px; background:linear-gradient(to bottom, var(--gold), transparent); position:relative; overflow:hidden; }
+.hero__cue .cue-line::after{
+  content:""; position:absolute; inset:0; background:linear-gradient(to bottom, transparent, var(--gold-light), transparent);
+  transform:translateY(-100%); animation:cue 2.2s var(--ease-out) infinite;
+}
+@keyframes cue{ 0%{ transform:translateY(-100%);} 60%,100%{ transform:translateY(100%);} }
+@keyframes cueX{ 0%{ transform:translateX(-100%);} 60%,100%{ transform:translateX(100%);} }
+html.js .hero__cue{ opacity:0; }
+
+/* ---------- sections ---------- */
+section{ position:relative; }
+.sec{ padding:clamp(72px,12vw,140px) 0; }
+.sec + .sec{ border-top:1px solid rgba(226,194,133,.08); }
+
+.display{
+  font-weight:200; letter-spacing:-.02em; line-height:1.22; margin:0 0 28px;
+  font-size:clamp(30px,7.2vw,64px); color:var(--gold-light);
+}
+.display strong{ font-weight:300; color:var(--gold); }
+h2.display{ font-size:clamp(26px,5.4vw,46px); }
+.w{ display:inline-block; overflow:hidden; vertical-align:bottom; padding-bottom:.08em; margin-bottom:-.08em; }
+.w__in{ display:inline-block; }
+html.js [data-split] .w__in{ transform:translateY(110%); }
+html.reduced [data-split] .w__in{ transform:none !important; }
+
+.lede{ font-size:clamp(16px,2.1vw,19px); color:var(--text-2); max-width:62ch; margin:0 0 36px; }
+.lede em{ font-style:normal; color:var(--gold); font-weight:400; }
+.lede--sign{ margin-top:-16px; font-size:15px; color:var(--gold-light); letter-spacing:.02em; }
+
+html.js .reveal{ opacity:0; transform:translateY(28px); }
+html.reduced .reveal{ opacity:1 !important; transform:none !important; }
+
+/* cta strip */
+.cta-strip{ background:var(--ink); padding:28px 0 44px; border-bottom:1px solid rgba(226,194,133,.08); }
+.cta-strip .wrap{ display:flex; flex-direction:column; align-items:center; gap:16px; text-align:center; }
+.btn-primary--cta{ width:100%; max-width:420px; min-height:60px; font-size:17px; box-shadow:0 18px 50px rgba(226,194,133,.18); }
+.cta-strip__note{ margin:0; font-size:13px; color:var(--muted); letter-spacing:.02em; }
+.cta-strip__note .en{ color:var(--text-2); }
+@media (min-width:900px){ .cta-strip{ padding:36px 0 56px; } }
+
+/* invite */
+.invite{ background:linear-gradient(to bottom, var(--ink), var(--bg) 40%); }
+.invite .wrap{ display:grid; gap:48px; }
+.invite__aside .eyebrow{ margin-bottom:18px; }
+.invite__aside .notes{ margin-top:24px; }
+.credits{ margin:0; display:grid; grid-template-columns:auto 1fr; gap:10px 18px; font-size:14px; border-top:1px solid var(--line); padding-top:22px; }
+.credits dt{ color:var(--muted); letter-spacing:.06em; font-size:12px; padding-top:3px; }
+.credits dd{ margin:0; color:var(--text); }
+.release{
+  display:flex; align-items:baseline; gap:14px; flex-wrap:wrap;
+  font-family:var(--font-en); font-weight:200; color:var(--gold-light);
+}
+.release .big{ font-size:clamp(44px,9vw,84px); letter-spacing:.02em; line-height:1; }
+.release .sub{ font-family:var(--font-kr); font-weight:300; color:var(--text-2); font-size:14px; letter-spacing:.04em; }
+
+.timeline{ list-style:none; margin:0; padding:0; display:grid; gap:0; border-top:1px solid var(--line); }
+.timeline li{
+  display:grid; grid-template-columns:28px 1fr; gap:18px; align-items:start;
+  padding:24px 0; border-bottom:1px solid var(--line); position:relative;
+}
+.timeline iconify-icon{ color:var(--sand); font-size:24px; margin-top:2px; }
+.timeline .t-label{ display:block; font-size:12px; letter-spacing:.14em; color:var(--muted); margin-bottom:6px; }
+.timeline .t-date{ display:block; font-size:clamp(20px,3.6vw,28px); font-weight:300; color:var(--gold-light); letter-spacing:-.01em; line-height:1.3; }
+.timeline .t-date .en{ font-weight:200; letter-spacing:.02em; }
+.timeline .t-note{ display:block; font-size:13px; color:var(--text-2); margin-top:4px; }
+.timeline .t-link{ color:var(--gold); border-bottom:1px solid var(--line-strong); }
+.timeline li.is-key .t-date{ color:var(--gold); }
+.notes{ margin:34px 0 0; padding:0; list-style:none; display:grid; gap:10px; font-size:14px; color:var(--text-2); }
+.notes li{ padding-left:16px; position:relative; }
+.notes li::before{ content:""; position:absolute; left:0; top:.78em; width:6px; height:1px; background:var(--sand); }
+
+/* film */
+.film{ background:linear-gradient(to bottom, var(--bg), var(--bg-2)); }
+.film__grid{ display:grid; gap:40px; }
+.film__left{ display:grid; gap:24px; align-content:start; }
+.film__intro{ display:grid; gap:10px; }
+.film__left > .eyebrow{ margin-bottom:0; }
+.film__intro-title{ margin:0 0 4px; font-size:clamp(18px,2.2vw,21px); font-weight:300; color:var(--gold-light); letter-spacing:-.01em; }
+.film__intro p{ margin:0; font-size:14px; line-height:1.7; color:var(--text-2); }
+.film__awards{ list-style:none; margin:10px 0 0; padding:14px 0 0; border-top:1px solid var(--line); display:grid; gap:6px; font-size:13.5px; line-height:1.65; color:var(--text); }
+.film__awards li{ position:relative; padding-left:14px; }
+.film__awards li::before{ content:""; position:absolute; left:0; top:.72em; width:4px; height:4px; border-radius:50%; background:var(--sand); }
+.film__visual{ position:relative; overflow:hidden; border-radius:4px; aspect-ratio:16/9; background:var(--bg-3); }
+.film__visual picture{ position:absolute; inset:0; }
+.film__visual img{ width:100%; height:100%; object-fit:cover; object-position:50% 50%; will-change:transform; }
+.film__visual::after{ content:""; position:absolute; inset:0; box-shadow:inset 0 0 0 1px rgba(226,194,133,.15); pointer-events:none; }
+.info{ margin:0; display:grid; grid-template-columns:auto 1fr; gap:12px 20px; font-size:14px; border-top:1px solid var(--line); padding-top:20px; }
+.info dt{ color:var(--muted); font-size:12px; letter-spacing:.08em; padding-top:2px; }
+.info dd{ margin:0; }
+.synopsis__open{
+  margin:0 0 22px; color:var(--gold-light); font-weight:200; letter-spacing:-.01em; line-height:1.35;
+  font-size:clamp(21px,2.6vw,27px);
+}
+.synopsis__open .w{ padding-bottom:.1em; margin-bottom:-.1em; }
+.synopsis__close{ margin:28px 0 0; font-weight:500; }
+.synopsis p br{ display:none; }
+@media (min-width:1100px){ .synopsis p br{ display:inline; } }
+.synopsis{ margin:0; color:var(--text-2); font-size:15.5px; }
+.synopsis p{ margin:0 0 1em; }
+.synopsis .tag{ color:var(--gold-light); font-weight:300; font-size:clamp(18px,3vw,24px); letter-spacing:-.01em; margin-top:1.4em; }
+
+/* rsvp */
+.rsvp{ background:var(--bg-2); }
+.form{ display:grid; gap:40px; max-width:680px; }
+.form[hidden]{ display:none; }
+fieldset{ border:0; margin:0; padding:0; min-width:0; }
+legend{ padding:0; margin:0 0 18px; display:flex; align-items:baseline; gap:12px; width:100%; }
+legend .n{ font-family:var(--font-en); font-weight:200; font-size:26px; color:var(--sand); line-height:1; }
+legend .t{ font-size:17px; font-weight:400; color:var(--gold-light); }
+legend .opt{ font-size:12px; color:var(--muted); letter-spacing:.06em; margin-left:auto; }
+.fields{ display:grid; gap:18px; }
+.field{ position:relative; }
+.field label{ display:block; font-size:12px; letter-spacing:.1em; color:var(--muted); margin-bottom:6px; }
+.field input{
+  width:100%; display:block; background:transparent; border:0; border-bottom:1px solid var(--line);
+  padding:10px 0 12px; font-size:17px; font-weight:300; color:var(--gold-light); border-radius:0;
+  transition:border-color .25s; min-height:48px; -webkit-appearance:none; appearance:none;
+}
+.field input::placeholder{ color:rgba(142,131,112,.6); }
+.field input:focus{ border-bottom-color:var(--gold); }
+.field input:focus-visible{ outline:none; }
+.field .bar{ position:absolute; left:0; right:0; bottom:0; height:1px; background:var(--gold); transform:scaleX(0); transform-origin:left; transition:transform .45s var(--ease-out); }
+.field input:focus ~ .bar{ transform:scaleX(1); }
+.field.is-invalid input{ border-bottom-color:var(--danger); }
+.field .err{ display:none; font-size:12.5px; color:var(--danger); margin-top:6px; }
+.field.is-invalid .err{ display:block; }
+
+.companions{ display:grid; gap:12px; }
+.companions:not(:empty){ margin-bottom:12px; }
+.companion{
+  position:relative; padding:18px 18px 20px; border:1px solid var(--line); border-radius:6px; background:rgba(226,194,133,.03);
+}
+.companion__head{ display:flex; align-items:center; justify-content:space-between; margin-bottom:12px; }
+.companion__title{ font-family:var(--font-en); font-weight:300; font-size:11px; letter-spacing:.3em; text-transform:uppercase; color:var(--sand); }
+.companion__remove{
+  display:inline-flex; align-items:center; gap:4px; color:var(--muted); font-size:12.5px; min-height:36px; padding:0 4px;
+  transition:color .2s;
+}
+.companion__remove:hover{ color:var(--danger); }
+.companion__remove iconify-icon{ font-size:18px; }
+.btn-add{
+  display:inline-flex; align-items:center; gap:8px; color:var(--gold); font-size:14px; font-weight:400;
+  border:1px dashed var(--line-strong); border-radius:6px; padding:14px 18px; width:100%; justify-content:center; min-height:52px;
+  transition:background .25s, border-color .25s, color .25s;
+}
+.btn-add iconify-icon{ font-size:20px; }
+.btn-add:hover{ background:rgba(226,194,133,.06); border-style:solid; }
+.btn-add:active{ transform:scale(.99); }
+.btn-add[hidden]{ display:none; }
+.companions__note{ margin:14px 0 0; font-size:12.5px; letter-spacing:.04em; color:var(--muted); text-align:center; }
+.companions__note[hidden]{ display:none; }
+
+.consent{ margin:0; font-size:13.5px; line-height:1.7; color:var(--text-2); padding-left:14px; border-left:1px solid var(--line-strong); }
+
+.btn-primary{
+  position:relative; display:inline-flex; align-items:center; justify-content:center; gap:10px; width:100%; min-height:58px;
+  background:var(--gold); color:var(--ink); font-size:16px; font-weight:500; letter-spacing:.02em; border-radius:4px;
+  overflow:hidden; transition:background .25s, transform .15s;
+}
+.btn-primary::before{ content:""; position:absolute; inset:0; background:linear-gradient(110deg, transparent 30%, rgba(255,255,255,.45) 50%, transparent 70%); transform:translateX(-120%); }
+.btn-primary:hover{ background:var(--gold-light); }
+.btn-primary:hover::before{ transition:transform .9s var(--ease-out); transform:translateX(120%); }
+.btn-primary:active{ transform:scale(.985); }
+.btn-primary[disabled]{ background:var(--bronze); color:var(--text); cursor:wait; }
+.btn-primary .spin{ width:18px; height:18px; border:2px solid rgba(7,6,5,.3); border-top-color:var(--ink); border-radius:50%; display:none; animation:spin .8s linear infinite; }
+.btn-primary.is-loading .spin{ display:block; }
+.btn-primary.is-loading .lbl{ opacity:.7; }
+@keyframes spin{ to{ transform:rotate(360deg);} }
+
+.form__status{ font-size:13.5px; color:var(--danger); min-height:1em; }
+.form__status.is-info{ color:var(--gold); }
+.field label .hint{ font-size:11px; letter-spacing:.02em; color:var(--sand); margin-left:6px; }
+#companions-set[hidden]{ display:none; }
+.btn-ghost{ margin-top:24px; font-size:13.5px; color:var(--gold); border-bottom:1px solid var(--line-strong); padding:4px 0; min-height:36px; }
+.btn-ghost:hover{ color:var(--gold-light); border-color:var(--gold); }
+.success{ display:none; max-width:680px; padding:40px 0 0; border-top:1px solid var(--line); }
+.success.is-visible{ display:block; }
+.success h3{ font-size:clamp(22px,4vw,30px); font-weight:300; color:var(--gold-light); margin:0 0 12px; display:flex; align-items:center; gap:12px; }
+.success h3 iconify-icon{ color:var(--gold); font-size:30px; }
+.success p{ color:var(--text-2); margin:0 0 8px; }
+.success .summary{ margin:20px 0 0; padding:18px; border:1px solid var(--line); border-radius:6px; font-size:14px; display:grid; gap:6px; }
+.success .summary span{ color:var(--muted); font-size:12px; letter-spacing:.08em; margin-right:8px; }
+
+/* footer */
+.footer{ background:var(--ink); padding:56px 0 calc(40px + env(safe-area-inset-bottom)); border-top:1px solid rgba(226,194,133,.08); font-size:13px; color:var(--muted); }
+.footer .wrap{ display:grid; gap:24px; }
+.footer__brand{ font-family:var(--font-en); font-weight:200; letter-spacing:.5em; font-size:20px; color:var(--gold-light); }
+.footer__contact{ display:grid; gap:8px; }
+.footer__contact a{ display:inline-flex; align-items:center; gap:8px; color:var(--text-2); min-height:32px; }
+.footer__contact a:hover{ color:var(--gold); }
+.footer__contact iconify-icon{ color:var(--sand); font-size:16px; }
+.footer small{ display:block; line-height:1.8; }
+
+/* ---------- desktop ---------- */
+@media (min-width:900px){
+  body{ font-size:17px; }
+  .hero__m{ display:none; }
+  .hero__layers{ display:block; }
+  .hero__eyebrow{ font-size:15px; letter-spacing:.16em; }
+  .hero__cue .cue-kr{ display:block; }
+  .hero__cue{
+    left:var(--gutter); transform:none; flex-direction:row; align-items:center; gap:16px;
+    bottom:calc(36px + env(safe-area-inset-bottom)); padding:12px 0;
+  }
+  .hero__cue .cue-line{ width:56px; height:1px; background:linear-gradient(to right, var(--gold), transparent); }
+  .hero__cue .cue-line::after{ background:linear-gradient(to right, transparent, var(--gold-light), transparent); transform:translateX(-100%); animation-name:cueX; }
+  .hero__scrim{
+    display:block;
+    background:
+      linear-gradient(to bottom, rgba(7,6,5,.5) 0%, rgba(7,6,5,0) 22%),
+      linear-gradient(to top, rgba(7,6,5,.9) 0%, rgba(7,6,5,.2) 18%, rgba(7,6,5,0) 40%);
+  }
+  .invite .wrap{ grid-template-columns:1.1fr .9fr; align-items:start; gap:80px; }
+  .invite__aside{ display:grid; gap:0; align-self:start; }
+  .timeline li{ grid-template-columns:32px 1fr; padding:28px 0; }
+  .film__grid{ grid-template-columns:.9fr 1.1fr; gap:72px; align-items:start; }
+  .film__right{ padding-top:46px; }  /* 왼쪽 소제목 높이만큼 내려 기준선 맞춤 */
+  .film__visual{ aspect-ratio:2780/3961; }  /* 세로 포스터 원본 비율 → 잘림·여백 없음 */
+  .rsvp .wrap{ display:grid; grid-template-columns:.8fr 1.2fr; gap:80px; align-items:start; }
+  .rsvp__head{ position:sticky; top:120px; }
+  .fields.two{ grid-template-columns:1fr 1fr; gap:24px; }
+  .fields.two .field--full{ grid-column:1 / -1; }
+  .footer .wrap{ grid-template-columns:auto 1fr; align-items:start; gap:60px; }
+}
+
+/* ---------- reduced motion ---------- */
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{ animation-duration:.01ms !important; animation-iteration-count:1 !important; transition-duration:.01ms !important; }
+  html.js .layer, html.js .mlayer, html.js .hero__eyebrow span, html.js .hero__eyebrow i, html.js .hero__cue, html.js .topbar{ opacity:1 !important; transform:none !important; }
+  html.js [data-split] .w__in{ transform:none !important; }
+  html.js .reveal{ opacity:1 !important; transform:none !important; }
+  .hero__dust{ display:none; }
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#invite">본문으로 건너뛰기</a>
+
+<header class="topbar">
+  <a class="topbar__brand" href="#top" aria-label="RAPHAEL, 맨 위로">RAPHAEL</a>
+  <span class="topbar__tag"><i aria-hidden="true"></i>Special Screening<i aria-hidden="true"></i></span>
+</header>
+
+<main>
+  <!-- ========== HERO ========== -->
+  <section class="hero" id="top" aria-label="영화 라파엘 포스터">
+    <!-- 모바일: 세로 포스터 레이어 분리 (뒤 → 앞: 배경+인물, 카피, 타이틀). 위아래는 그라데이션으로 검정에 녹임 -->
+    <div class="hero__m" aria-hidden="true">
+      <div class="mlayer mlayer--bg"><div class="mlayer__in"><picture>
+        <source media="(max-width: 899px)" type="image/webp" srcset="assets/layers/m-bg.webp">
+        <source media="(max-width: 899px)" srcset="assets/layers/m-bg.jpg">
+        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="" decoding="async" fetchpriority="high">
+      </picture></div></div>
+      <div class="mlayer mlayer--fade"></div>
+      <picture class="mlayer mlayer--tagline">
+        <source media="(max-width: 899px)" type="image/webp" srcset="assets/layers/m-tagline.webp">
+        <source media="(max-width: 899px)" srcset="assets/layers/m-tagline.png">
+        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="" decoding="async">
+      </picture>
+      <picture class="mlayer mlayer--title">
+        <source media="(max-width: 899px)" type="image/webp" srcset="assets/layers/m-title.webp">
+        <source media="(max-width: 899px)" srcset="assets/layers/m-title.png">
+        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="" decoding="async">
+      </picture>
+    </div>
+    <p class="sr-only">영화 라파엘 포스터. 모바일: 모래 폭풍 속, 얼굴 절반이 기계로 드러난 안드로이드 알렉세이. '나도 죽으면 천국에 갈 수 있나'. 라파엘.</p>
+    <!-- 데스크톱: 가로 포스터 레이어 분리 (뒤 → 앞: 배경, 카피, 인물, 타이틀) -->
+    <div class="hero__layers" aria-hidden="true">
+      <div class="layer layer--bg"><div class="layer__in"><picture>
+        <source media="(min-width: 900px)" type="image/webp" srcset="assets/layers/bg.webp">
+        <source media="(min-width: 900px)" srcset="assets/layers/bg.jpg">
+        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="" decoding="async" fetchpriority="high">
+      </picture></div></div>
+      <div class="layer layer--tagline"><div class="layer__in"><picture>
+        <source media="(min-width: 900px)" type="image/webp" srcset="assets/layers/tagline.webp">
+        <source media="(min-width: 900px)" srcset="assets/layers/tagline.png">
+        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="" decoding="async">
+      </picture></div></div>
+      <div class="layer layer--figures"><div class="layer__in"><picture>
+        <source media="(min-width: 900px)" type="image/webp" srcset="assets/layers/figures.webp">
+        <source media="(min-width: 900px)" srcset="assets/layers/figures.png">
+        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="" decoding="async">
+      </picture></div></div>
+      <div class="layer layer--title"><div class="layer__in"><picture>
+        <source media="(min-width: 900px)" type="image/webp" srcset="assets/layers/title.webp">
+        <source media="(min-width: 900px)" srcset="assets/layers/title.png">
+        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="" decoding="async">
+      </picture></div></div>
+    </div>
+    <p class="sr-only">데스크톱: 석양을 등지고 무릎 꿇은 안드로이드와 망토를 두른 소녀가 마주 보고 있는 가로 포스터. '돌아올게 약속해'. 라파엘.</p>
+    <canvas class="hero__dust" aria-hidden="true"></canvas>
+    <div class="hero__vignette" aria-hidden="true"></div>
+    <div class="hero__scrim" aria-hidden="true"></div>
+
+    <p class="hero__eyebrow"><i aria-hidden="true"></i><span>시사회에 초대합니다.</span><i aria-hidden="true"></i></p>
+
+    <a class="hero__cue" href="#reply-cta" data-scroll aria-label="초대장 열기">
+      <span class="cue-kr">초대장 열기</span>
+      <span class="cue-line" aria-hidden="true"></span>
+    </a>
+  </section>
+
+  <!-- ========== CTA (히어로 바로 아래) ========== -->
+  <section class="cta-strip" id="reply-cta" aria-label="참석 여부 회신">
+    <div class="wrap">
+      <a class="btn-primary btn-primary--cta reveal" href="#rsvp">
+        <span class="lbl">시사회 참석 여부 회신하기</span>
+        <iconify-icon icon="solar:arrow-right-down-linear" aria-hidden="true"></iconify-icon>
+      </a>
+      <p class="cta-strip__note reveal"><span class="en">11.18</span> (수) 오후 7:40 · 롯데시네마 월드타워 · 동반 2인까지</p>
+    </div>
+  </section>
+
+  <!-- ========== INVITATION ========== -->
+  <section class="sec invite" id="invite" aria-labelledby="invite-title">
+    <div class="wrap">
+      <div>
+        <p class="eyebrow reveal">Invitation</p>
+        <h1 class="display" id="invite-title" data-split>관객보다 먼저,<br>〈라파엘〉을<br><strong>만나 주십시오</strong></h1>
+        <p class="lede reveal">오는 <em>11월 18일</em>, 정식 개봉에 앞서 귀한 분들을 시사회에 모시고 100% 생성형 AI 기술로 완성한 영화 〈라파엘〉을 함께 나누고자 합니다. 바쁘시더라도 부디 자리를 빛내 주시기 바랍니다.</p>
+        <p class="lede lede--sign reveal">마테오AI스튜디오 · MBC C&amp;I AI Contents Lab 드림</p>
+      </div>
+      <div class="invite__aside">
+        <p class="eyebrow reveal">Screening Info</p>
+        <ol class="timeline reveal">
+          <li class="is-key">
+            <iconify-icon icon="solar:calendar-linear" aria-hidden="true"></iconify-icon>
+            <div>
+              <span class="t-label">일시</span>
+              <span class="t-date">11.18 (수) 오후 7:40</span>
+              <span class="t-note">2026년 11월 18일 수요일 · 러닝타임 138분</span>
+            </div>
+          </li>
+          <li>
+            <iconify-icon icon="solar:map-point-linear" aria-hidden="true"></iconify-icon>
+            <div>
+              <span class="t-label">장소</span>
+              <span class="t-date">롯데시네마 월드타워</span>
+              <span class="t-note">상영관은 추후 개별 안내드립니다.<br>서울 송파구 올림픽로 300 롯데월드몰 · <a class="t-link" href="https://map.naver.com/p/search/롯데시네마%20월드타워" target="_blank" rel="noopener">지도 보기</a></span>
+            </div>
+          </li>
+          <li>
+            <iconify-icon icon="solar:ticket-linear" aria-hidden="true"></iconify-icon>
+            <div>
+              <span class="t-label">입장</span>
+              <span class="t-date">상영 30분 전부터 입장</span>
+              <span class="t-note">현장 데스크에서 성함 확인 후 좌석을 안내해 드립니다</span>
+            </div>
+          </li>
+        </ol>
+        <ul class="notes reveal">
+          <li>초대받으신 분 본인 외 동반 2인까지 함께 참석하실 수 있습니다.</li>
+          <li>좌석 준비를 위해 참석 여부를 미리 회신해 주시기 바랍니다.</li>
+          <li>상영 중 촬영 및 녹음은 금지됩니다.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== RSVP ========== -->
+  <section class="sec rsvp" id="rsvp" aria-labelledby="rsvp-title">
+    <div class="wrap">
+      <div class="rsvp__head">
+        <p class="eyebrow reveal">RSVP</p>
+        <h2 class="display" id="rsvp-title" data-split>시사회 참석 여부 회신</h2>
+        <p class="lede reveal">참석하실 분의 성함, 연락처, 이메일을 남겨 주세요. 동행하실 분이 있다면 함께 등록하실 수 있습니다. 입력하신 정보는 참석 확인과 좌석 준비에만 사용됩니다.</p>
+      </div>
+
+      <form class="form reveal" id="rsvp-form" novalidate>
+        <!-- 참석하실 분 -->
+        <fieldset>
+          <legend><span class="n en">01</span><span class="t">참석하실 분</span></legend>
+          <div class="fields two">
+            <div class="field">
+              <label for="inv-name">성함</label>
+              <input id="inv-name" name="invitee_name" type="text" autocomplete="name" placeholder="홍길동" required data-kind="name">
+              <span class="bar" aria-hidden="true"></span>
+              <p class="err" id="inv-name-err">성함을 입력해 주세요.</p>
+            </div>
+            <div class="field">
+              <label for="inv-phone">전화번호 <small class="hint">- 없이 번호만 입력</small></label>
+              <input id="inv-phone" name="invitee_phone" type="tel" inputmode="numeric" autocomplete="tel-national" placeholder="01012345678" required data-kind="phone" maxlength="15">
+              <span class="bar" aria-hidden="true"></span>
+              <p class="err" id="inv-phone-err">전화번호를 숫자만 입력해 주세요.</p>
+            </div>
+            <div class="field field--full">
+              <label for="inv-email">이메일</label>
+              <input id="inv-email" name="invitee_email" type="email" inputmode="email" autocomplete="email" placeholder="name@company.com" required data-kind="email">
+              <span class="bar" aria-hidden="true"></span>
+              <p class="err" id="inv-email-err">이메일 주소를 확인해 주세요.</p>
+            </div>
+          </div>
+        </fieldset>
+
+        <!-- 동행자 -->
+        <fieldset id="companions-set">
+          <legend><span class="n en">02</span><span class="t">동행자</span><span class="opt">선택 · 동반 2인까지</span></legend>
+          <div class="companions" id="companions" aria-live="polite" aria-relevant="additions removals"></div>
+          <button type="button" class="btn-add" id="add-companion">
+            <iconify-icon icon="solar:add-circle-linear" aria-hidden="true"></iconify-icon>
+            동행자 추가
+          </button>
+          <p class="companions__note" id="companions-note" hidden>동반 2인까지 추가 가능합니다</p>
+        </fieldset>
+
+        <!-- 동의 및 제출 -->
+        <div style="display:grid;gap:22px">
+          <p class="consent" id="consent-note">아래 버튼을 누르시면 시사회에 참석하시는 것으로 접수되며, 참석 확인과 좌석 준비를 위해 성함·전화번호·이메일을 수집·이용하는 데 동의하신 것으로 간주합니다. 수집된 정보는 시사회 종료 후 파기됩니다.</p>
+          <p class="form__status" id="form-status" role="alert" aria-live="assertive"></p>
+          <button type="submit" class="btn-primary" id="submit-btn">
+            <span class="spin" aria-hidden="true"></span>
+            <span class="lbl">회신하기</span>
+            <iconify-icon icon="solar:arrow-right-linear" aria-hidden="true"></iconify-icon>
+          </button>
+        </div>
+      </form>
+
+      <div class="success" id="success" tabindex="-1" aria-live="polite">
+        <h3><iconify-icon icon="solar:check-circle-linear" aria-hidden="true"></iconify-icon><span id="success-title">회신이 접수되었습니다</span></h3>
+        <p id="success-lead">11월 18일(수) 오후 7:40, 롯데시네마 월드타워에서 뵙겠습니다. 상영관은 추후 개별 안내드리며, 현장에서 성함 확인 후 입장해 주세요.</p>
+        <div class="summary" id="success-summary"></div>
+        <button type="button" class="btn-ghost" id="edit-btn">회신 내용 수정</button>
+      </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FILM ========== -->
+  <section class="sec film" id="film" aria-labelledby="film-title">
+    <div class="wrap film__grid">
+      <div class="film__left">
+        <p class="eyebrow reveal">About the Film</p>
+        <div class="film__intro reveal">
+          <h3 class="film__intro-title">AI 기술력이 증명한 차세대 시네마</h3>
+          <p>100% 생성형 AI 기술로 거대한 미래 세계관을 구현한 극장용 상업 장편영화.</p>
+          <p>1년 2개월간 컷 단위의 정교한 이미지 및 영상 후보정을 거쳐 캐릭터의 일관성과 밀도 높은 미장센을 완성하다.</p>
+          <ul class="film__awards">
+            <li>문화체육관광부 주최 · 한국콘텐츠진흥원 주관<br>2025 AI 영상제작지원사업 선정</li>
+            <li>2025 제2회 부산국제AI영화제 개막작</li>
+            <li>2026 칸 국제영화제 마켓 ‘마르셰 뒤 필름’ Kling AI 콘퍼런스 공식 초청</li>
+          </ul>
+        </div>
+      <figure class="film__visual reveal" style="margin:0">
+        <!-- 히어로와 반대 방향의 포스터: 모바일은 가로 스틸, 데스크톱은 세로 포스터 -->
+        <picture>
+          <source media="(min-width: 900px)" type="image/webp" srcset="assets/poster-portrait-1000.webp 1000w, assets/poster-portrait-1600.webp 1600w" sizes="(min-width:900px) 40vw, 100vw">
+          <source media="(min-width: 900px)" type="image/jpeg" srcset="assets/poster-portrait-1000.jpg 1000w, assets/poster-portrait-1600.jpg 1600w" sizes="(min-width:900px) 40vw, 100vw">
+          <source type="image/webp" srcset="assets/poster-landscape-1280.webp 1280w, assets/poster-landscape-1920.webp 1920w" sizes="100vw">
+          <img src="assets/poster-landscape-1280.jpg" srcset="assets/poster-landscape-1280.jpg 1280w, assets/poster-landscape-1920.jpg 1920w" sizes="100vw"
+               width="1280" height="720" loading="lazy" decoding="async"
+               alt="영화 라파엘 가로 포스터. 석양을 등지고 무릎 꿇은 안드로이드와 망토를 두른 소녀가 마주 보고 있다. '돌아올게 약속해'.">
+        </picture>
+      </figure>
+      </div>
+      <div class="film__right">
+        <h2 class="synopsis__open" id="film-title" data-split>2050년, 기후 재난과 전쟁으로 무너진 세계.</h2>
+        <div class="synopsis reveal">
+          <p>허가 없이 태어난 아이는 즉시 사살되는 폐쇄 구역 ‘델모르’.<br> 독재자의 젊은 시절을 본떠 만든 전쟁 병기 안드로이드 ‘알렉세이’는<br> 감정 수치가 오르는 순간 폐기될 운명이다.<br> 그러나 미등록자 소녀 소피아와 마지막 신부 미카엘을 만난 뒤,<br> 그는 잊고 있던 인간성과 구원에 대한 갈망에 눈뜬다.</p>
+        </div>
+        <p class="synopsis__open synopsis__close" data-split>나를 위해 살 것인가,<br>누군가를 위해 죽을 것인가?!</p>
+        <dl class="info reveal" style="margin-top:36px">
+          <dt>제목</dt><dd>라파엘</dd>
+          <dt>장르</dt><dd>SF, 액션, 드라마</dd>
+          <dt>감독</dt><dd>양익준, 문신우, 정주원</dd>
+          <dt>프로듀서</dt><dd>이상욱, 김효진</dd>
+          <dt>러닝타임</dt><dd>138분</dd>
+          <dt>제작</dt><dd>마테오AI스튜디오, MBC C&amp;I AI Contents Lab</dd>
+          <dt>배급</dt><dd>(주)삼백상회</dd>
+          <dt>개봉</dt><dd>2026년 11월 25일</dd>
+          <dt>등급</dt><dd>15세 이상 관람가</dd>
+        </dl>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__brand">RAPHAEL</div>
+    <div>
+      <div class="footer__contact">
+        <a href="mailto:biz@mateoaistudio.com"><iconify-icon icon="solar:letter-linear" aria-hidden="true"></iconify-icon>메일링 문의 · biz@mateoaistudio.com</a>
+      </div>
+      <small style="margin-top:20px">제작 마테오AI스튜디오, MBC C&amp;I AI Contents Lab · 배급 (주)삼백상회<br>© 2026 Mateo AI Studio. All rights reserved.</small>
+    </div>
+  </div>
+</footer>
+
+<!-- 동행자 템플릿 -->
+<template id="companion-tpl">
+  <div class="companion">
+    <div class="companion__head">
+      <span class="companion__title">Companion <span class="idx">1</span></span>
+      <button type="button" class="companion__remove" aria-label="동행자 삭제">
+        <iconify-icon icon="solar:close-circle-linear" aria-hidden="true"></iconify-icon>삭제
+      </button>
+    </div>
+    <div class="fields two">
+      <div class="field">
+        <label>성함</label>
+        <input type="text" autocomplete="off" placeholder="동행자 성함" data-kind="name">
+        <span class="bar" aria-hidden="true"></span>
+        <p class="err">성함을 입력해 주세요.</p>
+      </div>
+      <div class="field">
+        <label>전화번호 <small class="hint">- 없이 번호만 입력</small></label>
+        <input type="tel" inputmode="numeric" autocomplete="off" placeholder="01012345678" data-kind="phone" maxlength="15">
+        <span class="bar" aria-hidden="true"></span>
+        <p class="err">전화번호를 숫자만 입력해 주세요.</p>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>document.documentElement.classList.add('js');</script>
+<script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js" defer></script>
+<script defer>
+window.addEventListener('DOMContentLoaded', () => {
+  const html = document.documentElement;
+  const mqReduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const reduced = mqReduce.matches;
+  if (reduced) html.classList.add('reduced');
+  const hasGsap = typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined';
+  if (hasGsap) gsap.registerPlugin(ScrollTrigger);
+
+  /* ---------- 1. 단어 분할 (접근성 보존) ---------- */
+  document.querySelectorAll('[data-split]').forEach(el => {
+    const label = el.textContent.replace(/\s+/g, ' ').trim();
+    el.setAttribute('aria-label', label);
+    const walk = (node) => {
+      [...node.childNodes].forEach(child => {
+        if (child.nodeType === 3) {
+          const frag = document.createDocumentFragment();
+          child.textContent.split(/(\s+)/).forEach(tok => {
+            if (!tok) return;
+            if (/^\s+$/.test(tok)) { frag.appendChild(document.createTextNode(' ')); return; }
+            const w = document.createElement('span'); w.className = 'w'; w.setAttribute('aria-hidden', 'true');
+            const i = document.createElement('span'); i.className = 'w__in'; i.textContent = tok;
+            w.appendChild(i); frag.appendChild(w);
+          });
+          node.replaceChild(frag, child);
+        } else if (child.nodeType === 1 && child.tagName !== 'BR') {
+          walk(child);
+        }
+      });
+    };
+    walk(el);
+  });
+
+  /* ---------- 2. 스무스 스크롤: Lenis (단일 엔진) ---------- */
+  let lenis = null;
+  if (!reduced && hasGsap && typeof Lenis !== 'undefined') {
+    lenis = new Lenis({ lerp: 0.09, wheelMultiplier: 1, smoothWheel: true });
+    lenis.on('scroll', ScrollTrigger.update);
+    gsap.ticker.add((t) => lenis.raf(t * 1000));
+    gsap.ticker.lagSmoothing(0);
+  }
+  const scrollToEl = (target, offset = 0) => {
+    if (lenis) lenis.scrollTo(target, { offset, duration: 1.4 });
+    else target.scrollIntoView({ behavior: reduced ? 'auto' : 'smooth', block: 'start' });
+  };
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', (e) => {
+      const id = a.getAttribute('href');
+      if (id.length < 2) return;
+      const t = document.querySelector(id);
+      if (!t) return;
+      e.preventDefault();
+      scrollToEl(t, id === '#top' ? 0 : -8);
+      if (id === '#rsvp') setTimeout(() => document.getElementById('inv-name')?.focus({ preventScroll: true }), lenis ? 1400 : 600);
+    });
+  });
+
+  /* ---------- 3. 히어로 먼지 입자 (경량 2D canvas) ---------- */
+  const hero = document.querySelector('.hero');
+  const dustCanvas = document.querySelector('.hero__dust');
+  let dustRAF = 0, dustActive = false, dustStop = () => {};
+  if (!reduced && dustCanvas && dustCanvas.getContext) {
+    const ctx = dustCanvas.getContext('2d');
+    const DPR = Math.min(window.devicePixelRatio || 1, 1.5);
+    let W = 0, H = 0, parts = [];
+    const COUNT = window.innerWidth < 900 ? 55 : 90;
+    const resize = () => {
+      W = hero.clientWidth; H = hero.clientHeight;
+      dustCanvas.width = W * DPR; dustCanvas.height = H * DPR;
+      ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+      parts = Array.from({ length: COUNT }, () => spawn(true));
+    };
+    const spawn = (anywhere) => ({
+      x: Math.random() * W, y: anywhere ? Math.random() * H : H + 10,
+      r: Math.random() * 1.6 + .4, vx: -(Math.random() * .25 + .08), vy: -(Math.random() * .35 + .12),
+      a: Math.random() * .6 + .2, tw: Math.random() * Math.PI * 2, ts: Math.random() * .02 + .005
+    });
+    let last = 0;
+    const tick = (now) => {
+      if (!dustActive) return;
+      const dt = Math.min((now - last) / 16.67, 2); last = now;
+      ctx.clearRect(0, 0, W, H);
+      for (let i = 0; i < parts.length; i++) {
+        const p = parts[i];
+        p.x += p.vx * dt; p.y += p.vy * dt; p.tw += p.ts * dt;
+        const alpha = p.a * (0.55 + 0.45 * Math.sin(p.tw));
+        ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, 6.283);
+        ctx.fillStyle = `rgba(232,200,140,${alpha.toFixed(3)})`; ctx.fill();
+        if (p.y < -10 || p.x < -10) parts[i] = spawn(false);
+      }
+      dustRAF = requestAnimationFrame(tick);
+    };
+    const start = () => { if (dustActive) return; dustActive = true; last = performance.now(); dustRAF = requestAnimationFrame(tick); };
+    const stop = () => { dustActive = false; cancelAnimationFrame(dustRAF); };
+    dustStop = stop;
+    resize();
+    let rT; window.addEventListener('resize', () => { clearTimeout(rT); rT = setTimeout(resize, 150); }, { passive: true });
+    const io = new IntersectionObserver(([en]) => { (en.isIntersecting && !document.hidden) ? start() : stop(); }, { threshold: 0.05 });
+    io.observe(hero);
+    document.addEventListener('visibilitychange', () => { document.hidden ? stop() : (hero.getBoundingClientRect().bottom > 0 && start()); });
+  } else if (dustCanvas) {
+    dustCanvas.remove();
+  }
+
+  /* ---------- 4. 히어로 인트로: 암전 → 포스터 페이드인 → 초대 문구 ---------- */
+  const M = {
+    bg: document.querySelector('.mlayer--bg'), bgIn: document.querySelector('.mlayer--bg .mlayer__in'),
+    tagline: document.querySelector('.mlayer--tagline'), title: document.querySelector('.mlayer--title')
+  };
+  const mlayers = [M.bg, M.tagline, M.title];
+  const isDesktop = window.matchMedia('(min-width: 900px)').matches;
+  const layers = [...document.querySelectorAll('.hero__layers .layer')];
+  const L = Object.fromEntries(layers.map(l => [l.className.match(/layer--(\w+)/)[1], l]));
+  const heroImg = (isDesktop ? L.bg : M.bg).querySelector('img');
+  const eyebrowParts = document.querySelectorAll('.hero__eyebrow span, .hero__eyebrow i');
+  const eyebrowEl = document.querySelector('.hero__eyebrow');
+  const cue = document.querySelector('.hero__cue');
+  const topbar = document.querySelector('.topbar');
+
+  if (hasGsap && !reduced) {
+    const intro = gsap.timeline({ defaults: { ease: 'power2.out' }, paused: true });
+    if (isDesktop) {
+      // 레이어 인트로: 배경 → 인물 → 카피 → 타이틀(가장 앞)
+      gsap.set(mlayers, { opacity: 1 });
+      intro
+        .fromTo(L.bg, { opacity: 0, scale: 1.08, filter: 'brightness(.5)' }, { opacity: 1, scale: 1, filter: 'brightness(1)', duration: 3.0, ease: 'power3.out' }, 0)
+        .fromTo(L.figures, { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 2.0 }, 0.7)
+        .fromTo(L.tagline, { opacity: 0, y: -8 }, { opacity: 1, y: 0, duration: 1.4 }, 1.7)
+        .fromTo(L.title, { opacity: 0, y: 28, scale: 1.06 }, { opacity: 1, y: 0, scale: 1, duration: 1.6, ease: 'power3.out' }, 1.9);
+    } else {
+      gsap.set([...layers, M.tagline, M.title], { opacity: 1 });
+      // 모바일 레이어 인트로: 배경(인물) → 카피 → 타이틀. 인트로는 내부 img에, 스크롤 패럴랙스는 레이어 컨테이너에 → 서로 간섭 없음
+      intro
+        .fromTo(M.bg, { opacity: 0, scale: 1.08, filter: 'brightness(.5)' }, { opacity: 1, scale: 1, filter: 'brightness(1)', duration: 3.0, ease: 'power3.out' }, 0)
+        .fromTo(M.tagline.querySelector('img'), { opacity: 0, y: -6 }, { opacity: 1, y: 0, duration: 1.4 }, 1.6)
+        .fromTo(M.title.querySelector('img'), { opacity: 0, y: 22, scale: 1.05 }, { opacity: 1, y: 0, scale: 1, duration: 1.6, ease: 'power3.out' }, 1.9);
+    }
+    intro
+      .fromTo(eyebrowParts, { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 1.1, stagger: 0.12 }, 2.1)
+      .fromTo(cue, { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 1 }, 2.7)
+      .to(topbar, { opacity: 1, duration: .8 }, 3.0);
+
+    // 인트로가 끝난 뒤 스크롤 트윈의 시작값을 다시 기록 (인트로 초기 오프셋이 섞이지 않도록)
+    intro.eventCallback('onComplete', () => ScrollTrigger.refresh());
+    const run = () => intro.play();
+    if (heroImg.complete && heroImg.naturalWidth > 1) run();
+    else { heroImg.addEventListener('load', run, { once: true }); heroImg.addEventListener('error', run, { once: true }); }
+
+    // 스크롤 패럴랙스 (데스크톱): 배경 고정, 인물은 아래→위로 살짝, 타이틀은 더 빠르게 위로, 카피는 반대로 아래로
+    if (isDesktop) {
+      const stD = { trigger: hero, start: 'top top', end: 'bottom top', scrub: true, invalidateOnRefresh: true };
+      gsap.fromTo(L.figures.querySelector('.layer__in'), { yPercent: 3.5 }, { yPercent: -2.5, ease: 'none', scrollTrigger: stD });
+      gsap.to([L.title.querySelector('.layer__in'), eyebrowEl], { y: () => -hero.clientHeight * 0.14, ease: 'none', scrollTrigger: stD });  // 타이틀 + 초대 문구 같이 이동
+      gsap.to(L.tagline.querySelector('.layer__in'), { y: () =>  hero.clientHeight * 0.08, ease: 'none', scrollTrigger: stD });
+    } else {
+      // 모바일: 레이어별 속도 차이 (히어로 높이 기준 px) → 배경 느리게, 타이틀 빠르게 위로, 카피는 반대로 아래로
+      const st = { trigger: hero, start: 'top top', end: 'bottom top', scrub: true, invalidateOnRefresh: true };
+      gsap.fromTo(M.bgIn, { yPercent: 3 }, { yPercent: -4, ease: 'none', scrollTrigger: st });
+      gsap.to([M.title, eyebrowEl], { y: () => -hero.clientHeight * 0.22, ease: 'none', scrollTrigger: st });  // 타이틀 + 초대 문구 같이 이동
+      gsap.to(M.tagline, { y: () =>  hero.clientHeight * 0.12, ease: 'none', scrollTrigger: st });
+    }
+    ScrollTrigger.create({ trigger: hero, start: 'bottom 80px', toggleClass: { targets: topbar, className: 'is-scrolled' } });
+    gsap.to('.hero__eyebrow, .hero__cue', {
+      opacity: 0, ease: 'none',
+      scrollTrigger: { trigger: hero, start: '25% top', end: '60% top', scrub: true }
+    });
+  } else {
+    // JS 있음 + 모션 축소: 최종 상태 즉시 렌더
+    [...mlayers, ...layers, ...eyebrowParts, cue, topbar].forEach(el => el && (el.style.opacity = 1));
+    const onScroll = () => topbar.classList.toggle('is-scrolled', window.scrollY > hero.offsetHeight - 80);
+    window.addEventListener('scroll', onScroll, { passive: true }); onScroll();
+  }
+
+  /* ---------- 4b. 초대 문구를 제목 바로 아래에 배치 ---------- */
+  const placeEyebrow = () => {
+    const W = hero.clientWidth, H = hero.clientHeight;
+    let top;
+    if (isDesktop) {
+      // 가로 레이어(2816×1584, cover) 안의 제목 하단(y=1294) 위치. 제목 레이어 scale(1.05, origin 55%) 반영
+      const sc = Math.max(W / 2816, H / 1584), offY = (H - 1584 * sc) / 2, oy = H * .55;
+      const titleBottom = oy + (offY + 1294 * sc - oy) * 1.05;
+      top = titleBottom + 20;
+      cue.hidden = false;
+    } else {
+      // 모바일: 타이틀 레이어 바로 아래
+      const titleBottom = M.title.offsetTop + M.title.offsetHeight;
+      top = titleBottom + 16;
+      cue.hidden = (H - top) < 100;   // 짧은 화면에서는 스크롤 큐 생략
+    }
+    eyebrowEl.style.setProperty('--eyebrow-top', Math.round(top) + 'px');
+  };
+  placeEyebrow();
+  window.addEventListener('resize', placeEyebrow, { passive: true });
+  window.addEventListener('orientationchange', () => setTimeout(placeEyebrow, 200));
+
+  /* ---------- 5. 섹션 리빌 ---------- */
+  if (hasGsap && !reduced) {
+    document.querySelectorAll('[data-split]').forEach(h => {
+      gsap.to(h.querySelectorAll('.w__in'), {
+        y: 0, duration: 1.1, ease: 'power4.out', stagger: 0.055,
+        scrollTrigger: { trigger: h, start: 'top 85%', once: true }
+      });
+    });
+    document.querySelectorAll('.reveal').forEach(el => {
+      gsap.to(el, {
+        opacity: 1, y: 0, duration: 1.1, ease: 'power3.out',
+        scrollTrigger: { trigger: el, start: 'top 88%', once: true }
+      });
+    });
+    document.querySelectorAll('.timeline li').forEach((li, i) => {
+      gsap.from(li, {
+        opacity: 0, x: -14, duration: .9, ease: 'power3.out', delay: i * .08,
+        scrollTrigger: { trigger: li, start: 'top 90%', once: true }
+      });
+    });
+    const filmImg = document.querySelector('.film__visual img');
+    if (filmImg) gsap.fromTo(filmImg, { scale: 1.06 }, {
+      scale: 1, ease: 'none',
+      scrollTrigger: { trigger: '.film__visual', start: 'top bottom', end: 'bottom top', scrub: true }
+    });
+
+    // 폰트·이미지 로드 후 측정 갱신
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => ScrollTrigger.refresh());
+    document.querySelectorAll('img').forEach(img => { if (!img.complete) img.addEventListener('load', () => ScrollTrigger.refresh(), { once: true }); });
+    window.addEventListener('load', () => ScrollTrigger.refresh());
+  }
+
+  /* ---------- 6. RSVP 폼 ---------- */
+  // Apps Script 웹 앱 URL(…/exec). 비워두면 전송하지 않고 데모로 완료 화면만 보여줍니다.
+  const ENDPOINT = 'https://script.google.com/macros/s/AKfycbzBzICXScDhNNhEoHwJaVT2_DV2y_25dcXKHJGBckOJ8epGGOUJxJKXI73mkRRAaf1C/exec';
+  const MAX_COMPANIONS = 2;
+  const form = document.getElementById('rsvp-form');
+  const list = document.getElementById('companions');
+  const addBtn = document.getElementById('add-companion');
+  const tpl = document.getElementById('companion-tpl');
+  const status = document.getElementById('form-status');
+  const submitBtn = document.getElementById('submit-btn');
+  const success = document.getElementById('success');
+  let uid = 0;
+
+  const digits = (v) => v.replace(/\D/g, '');
+  const esc = (s) => String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  const validPhone = (v) => /^\d{9,15}$/.test(v);
+  const validEmail = (v) => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v);
+
+  const bindField = (input) => {
+    const field = input.closest('.field');
+    const err = field.querySelector('.err');
+    if (!input.id) { input.id = `f-${++uid}`; field.querySelector('label').setAttribute('for', input.id); }
+    if (!err.id) err.id = `${input.id}-err`;
+    input.setAttribute('aria-describedby', err.id);
+    if (input.dataset.kind === 'phone') {
+      input.addEventListener('input', () => {
+        const d = digits(input.value).slice(0, 15);
+        if (d !== input.value) input.value = d;   // 하이픈·공백 자동 제거
+      });
+    }
+    input.addEventListener('input', () => { if (field.classList.contains('is-invalid')) validateField(input); });
+    input.addEventListener('blur', () => { if (input.value) validateField(input); });
+  };
+  const validateField = (input) => {
+    const field = input.closest('.field');
+    const v = input.value.trim();
+    let ok = true;
+    if (input.dataset.kind === 'name') ok = v.length >= 2;
+    if (input.dataset.kind === 'phone') ok = validPhone(v);
+    if (input.dataset.kind === 'email') ok = validEmail(v);
+    field.classList.toggle('is-invalid', !ok);
+    input.setAttribute('aria-invalid', String(!ok));
+    return ok;
+  };
+  form.querySelectorAll('.field input').forEach(bindField);
+
+  const renumber = () => {
+    [...list.children].forEach((c, i) => {
+      c.querySelector('.idx').textContent = String(i + 1).padStart(2, '0');
+      c.querySelector('.companion__remove').setAttribute('aria-label', `동행자 ${i + 1} 삭제`);
+    });
+    const full = list.children.length >= MAX_COMPANIONS;
+    addBtn.hidden = full;
+    document.getElementById('companions-note').hidden = !full;
+  };
+  const addCompanion = (focus = true) => {
+    if (list.children.length >= MAX_COMPANIONS) return;
+    const node = tpl.content.firstElementChild.cloneNode(true);
+    node.querySelectorAll('input').forEach(bindField);
+    node.querySelector('.companion__remove').addEventListener('click', () => {
+      const removeNow = () => { node.remove(); renumber(); if (!addBtn.hidden) addBtn.focus({ preventScroll: true }); if (hasGsap && !reduced) ScrollTrigger.refresh(); };
+      if (hasGsap && !reduced) gsap.to(node, { opacity: 0, height: 0, marginBottom: -12, paddingTop: 0, paddingBottom: 0, duration: .35, ease: 'power2.in', onComplete: removeNow });
+      else removeNow();
+    });
+    list.appendChild(node);
+    renumber();
+    if (hasGsap && !reduced) gsap.from(node, { opacity: 0, y: 12, duration: .5, ease: 'power3.out', onComplete: () => ScrollTrigger.refresh() });
+    if (focus) node.querySelector('input').focus({ preventScroll: true });
+  };
+  addBtn.addEventListener('click', () => addCompanion(true));
+
+  const setStatus = (msg) => { status.textContent = msg; };
+  const focusInvalid = () => {
+    const first = form.querySelector('.is-invalid input');
+    first?.focus({ preventScroll: true });
+    if (first) scrollToEl(first.closest('.field'), -140);
+  };
+
+  const callServer = async (payload) => {
+    if (!ENDPOINT) {   // 데모: 전송 없이 완료 화면만
+      await new Promise(r => setTimeout(r, 600));
+      console.info('[DEMO] 전송 데이터', payload);
+      return { ok: true, status: 'recorded', invitee: { name: payload.name, phone: payload.phone, email: payload.email }, companions: payload.companions, updated: false };
+    }
+    const res = await fetch(ENDPOINT, { method: 'POST', body: JSON.stringify(payload) }); // Content-Type 생략 → preflight 없음
+    if (!res.ok) throw new Error('bad status ' + res.status);
+    return res.json();
+  };
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    setStatus('');
+    const inviteeName = document.getElementById('inv-name');
+    const inviteePhone = document.getElementById('inv-phone');
+    const inviteeEmail = document.getElementById('inv-email');
+    let ok = validateField(inviteeName) & validateField(inviteePhone) & validateField(inviteeEmail);
+
+    // 동행자: 성함·전화 둘 다 비어 있으면 무시, 하나라도 있으면 둘 다 검증
+    const companions = [];
+    [...list.children].forEach(c => {
+      const [n, p] = c.querySelectorAll('input');
+      const empty = !n.value.trim() && !p.value.trim();
+      if (empty) { [n, p].forEach(i => { i.closest('.field').classList.remove('is-invalid'); i.removeAttribute('aria-invalid'); }); return; }
+      const good = validateField(n) & validateField(p);
+      ok = ok & good;
+      if (good) companions.push({ name: n.value.trim(), phone: digits(p.value) });
+    });
+
+
+    if (!ok) { setStatus('입력 내용을 확인해 주세요.'); focusInvalid(); return; }
+
+    const payload = {
+      name: inviteeName.value.trim(), phone: digits(inviteePhone.value), email: inviteeEmail.value.trim(),
+      companions, submittedAt: new Date().toISOString()
+    };
+    submitBtn.disabled = true; submitBtn.classList.add('is-loading');
+    try {
+      const r = await callServer(payload);
+      if (r.ok && r.status === 'recorded') showSuccess(r);
+      else setStatus('접수 중 문제가 발생했습니다. 잠시 후 다시 시도해 주세요.');
+    } catch (err) {
+      setStatus('접수 중 문제가 발생했습니다. 잠시 후 다시 시도해 주세요.');
+    } finally {
+      submitBtn.disabled = false; submitBtn.classList.remove('is-loading');
+    }
+  });
+
+  const showSuccess = (r) => {
+    document.getElementById('success-title').textContent = r.updated ? '회신 내용이 수정되었습니다' : '회신이 접수되었습니다';
+    const rows = [
+      `<div><span>참석하실 분</span>${esc(r.invitee.name)} · ${esc(r.invitee.phone)}</div>`,
+      `<div><span>이메일</span>${esc(r.invitee.email)}</div>`
+    ];
+    if (r.companions && r.companions.length) r.companions.forEach((c, i) => rows.push(`<div><span>동행자 ${i + 1}</span>${esc(c.name)} · ${esc(c.phone)}</div>`));
+    else rows.push(`<div><span>동행자</span>없음</div>`);
+    document.getElementById('success-summary').innerHTML = rows.join('');
+    form.hidden = true;
+    success.classList.add('is-visible');
+    if (hasGsap && !reduced) gsap.from(success, { opacity: 0, y: 20, duration: .9, ease: 'power3.out', onComplete: () => ScrollTrigger.refresh() });
+    success.focus({ preventScroll: true });
+    scrollToEl(success, -120);
+  };
+
+  document.getElementById('edit-btn').addEventListener('click', () => {
+    success.classList.remove('is-visible');
+    form.hidden = false;
+    setStatus('');
+    if (hasGsap && !reduced) ScrollTrigger.refresh();
+    document.getElementById('inv-name').focus({ preventScroll: true });
+    scrollToEl(form, -120);
+  });
+
+  /* ---------- 7. 정리 ---------- */
+  window.addEventListener('pagehide', () => {
+    dustStop();
+    if (lenis) lenis.destroy();
+    if (hasGsap) ScrollTrigger.getAll().forEach(t => t.kill());
+  });
+});
+</script>
+</body>
+</html>
