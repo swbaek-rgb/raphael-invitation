@@ -370,6 +370,25 @@ legend .opt{ font-size:12px; color:var(--muted); letter-spacing:.06em; margin-le
 .success .summary{ margin:20px 0 0; padding:18px; border:1px solid var(--line); border-radius:6px; font-size:14px; display:grid; gap:6px; }
 .success .summary span{ color:var(--muted); font-size:12px; letter-spacing:.08em; margin-right:8px; }
 
+/* floating RSVP button */
+.fab{
+  position:fixed; z-index:60; right:calc(16px + env(safe-area-inset-right)); bottom:calc(18px + env(safe-area-inset-bottom));
+  width:60px; height:60px; border-radius:50%; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:1px;
+  background:var(--gold); color:var(--ink); box-shadow:0 10px 30px rgba(0,0,0,.45), 0 0 0 1px rgba(244,228,193,.35) inset;
+  opacity:0; transform:translateY(16px) scale(.9); pointer-events:none;
+  transition:opacity .35s var(--ease-out), transform .45s var(--ease-out), background .25s;
+}
+.fab iconify-icon{ font-size:22px; }
+.fab__label{ font-size:9.5px; font-weight:500; letter-spacing:.02em; line-height:1; }
+.fab.is-visible{ opacity:1; transform:none; pointer-events:auto; }
+.fab:hover{ background:var(--gold-light); }
+.fab:active{ transform:scale(.95); }
+@media (min-width:900px){
+  .fab{ right:calc(var(--gutter) - 4px); bottom:28px; width:68px; height:68px; }
+  .fab iconify-icon{ font-size:24px; }
+  .fab__label{ font-size:10.5px; }
+}
+
 /* footer */
 .footer{ background:var(--ink); padding:56px 0 calc(40px + env(safe-area-inset-bottom)); border-top:1px solid rgba(226,194,133,.08); font-size:13px; color:var(--muted); }
 .footer .wrap{ display:grid; gap:24px; }
@@ -681,6 +700,12 @@ legend .opt{ font-size:12px; color:var(--muted); letter-spacing:.06em; margin-le
     </div>
   </div>
 </footer>
+
+<!-- 플로팅 회신 버튼 (히어로를 지나면 표시, 회신 폼이 보이면 숨김) -->
+<a class="fab" id="fab" href="#rsvp" aria-label="시사회 참석 여부 회신하기">
+  <iconify-icon icon="solar:letter-linear" aria-hidden="true"></iconify-icon>
+  <span class="fab__label">회신하기</span>
+</a>
 
 <!-- 동행자 템플릿 -->
 <template id="companion-tpl">
@@ -1090,6 +1115,19 @@ window.addEventListener('DOMContentLoaded', () => {
     if (hasGsap && !reduced) ScrollTrigger.refresh();
     document.getElementById('inv-name').focus({ preventScroll: true });
     scrollToEl(form, -120);
+  });
+
+  /* ---------- 6b. 플로팅 회신 버튼 ---------- */
+  const fab = document.getElementById('fab');
+  const rsvpSec = document.getElementById('rsvp');
+  let heroPassed = false, rsvpInView = false;
+  const updateFab = () => fab.classList.toggle('is-visible', heroPassed && !rsvpInView);
+  new IntersectionObserver(([en]) => { heroPassed = !en.isIntersecting && en.boundingClientRect.bottom < 0; updateFab(); }, { threshold: 0 }).observe(hero);
+  new IntersectionObserver(([en]) => { rsvpInView = en.isIntersecting; updateFab(); }, { threshold: 0.15 }).observe(rsvpSec);
+  fab.addEventListener('click', (e) => {
+    e.preventDefault();
+    scrollToEl(rsvpSec, -8);
+    setTimeout(() => document.getElementById('inv-name')?.focus({ preventScroll: true }), lenis ? 1400 : 600);
   });
 
   /* ---------- 7. 정리 ---------- */
