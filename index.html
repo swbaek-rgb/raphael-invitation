@@ -172,14 +172,14 @@ html.js .layer{ opacity:0; }
 .hero__eyebrow{
   position:absolute; z-index:4; left:0; right:0; top:var(--eyebrow-top, 76%);
   display:flex; justify-content:center; align-items:center; gap:14px;
-  font-family:var(--font-kr); font-weight:300; font-size:13px; letter-spacing:.14em; color:var(--gold-light);
+  font-family:var(--font-kr); font-weight:400; font-size:17px; letter-spacing:.14em; color:var(--gold-light);
   padding-inline:var(--gutter); white-space:nowrap;
 }
 .hero__eyebrow i{ display:block; width:36px; height:1px; background:var(--gold); opacity:.75; transform-origin:center; }
 html.js .hero__eyebrow span, html.js .hero__eyebrow i{ opacity:0; }
 
 .hero__cue{
-  position:absolute; z-index:4; left:50%; bottom:calc(22px + env(safe-area-inset-bottom)); transform:translateX(-50%);
+  position:absolute; z-index:4; left:0; right:0; margin-inline:auto; width:max-content; bottom:calc(22px + env(safe-area-inset-bottom));
   display:flex; flex-direction:column; align-items:center; gap:10px;
   font-family:var(--font-en); font-weight:300; font-size:11px; letter-spacing:.32em; text-transform:uppercase; color:var(--gold-light);
   padding:12px 18px; min-height:44px;
@@ -222,9 +222,9 @@ html.reduced .reveal{ opacity:1 !important; transform:none !important; }
 .cta-strip{ background:var(--ink); padding:28px 0 44px; border-bottom:1px solid rgba(226,194,133,.08); }
 .cta-strip .wrap{ display:flex; flex-direction:column; align-items:center; gap:16px; text-align:center; }
 .btn-primary--cta{ width:100%; max-width:420px; min-height:60px; font-size:17px; box-shadow:0 18px 50px rgba(226,194,133,.18); }
-.cta-strip__note{ margin:0; font-size:13px; color:var(--muted); letter-spacing:.02em; }
+.cta-strip__note{ margin:0; font-size:13px; font-weight:400; color:var(--muted); letter-spacing:.02em; }
 .cta-strip__note .en{ color:var(--text-2); }
-@media (min-width:900px){ .cta-strip{ padding:36px 0 56px; } }
+@media (min-width:900px){ .cta-strip{ padding:36px 0 56px; } .cta-strip__note{ font-size:16px; } }
 
 /* invite */
 .invite{ background:linear-gradient(to bottom, var(--ink), var(--bg) 40%); }
@@ -385,10 +385,10 @@ legend .opt{ font-size:12px; color:var(--muted); letter-spacing:.06em; margin-le
   body{ font-size:17px; }
   .hero__m{ display:none; }
   .hero__layers{ display:block; }
-  .hero__eyebrow{ font-size:15px; letter-spacing:.16em; }
+  .hero__eyebrow{ font-size:21px; letter-spacing:.16em; }
   .hero__cue .cue-kr{ display:block; }
   .hero__cue{
-    left:var(--gutter); transform:none; flex-direction:row; align-items:center; gap:16px;
+    left:var(--gutter); right:auto; margin:0; flex-direction:row; align-items:center; gap:16px;
     bottom:calc(36px + env(safe-area-inset-bottom)); padding:12px 0;
   }
   .hero__cue .cue-line{ width:56px; height:1px; background:linear-gradient(to right, var(--gold), transparent); }
@@ -486,7 +486,7 @@ legend .opt{ font-size:12px; color:var(--muted); letter-spacing:.06em; margin-le
     <div class="hero__vignette" aria-hidden="true"></div>
     <div class="hero__scrim" aria-hidden="true"></div>
 
-    <p class="hero__eyebrow"><i aria-hidden="true"></i><span>시사회에 초대합니다.</span><i aria-hidden="true"></i></p>
+    <p class="hero__eyebrow"><i aria-hidden="true"></i><span>시사회에 초대합니다</span><i aria-hidden="true"></i></p>
 
     <a class="hero__cue" href="#reply-cta" data-scroll aria-label="초대장 열기">
       <span class="cue-kr">초대장 열기</span>
@@ -511,7 +511,7 @@ legend .opt{ font-size:12px; color:var(--muted); letter-spacing:.06em; margin-le
       <div>
         <p class="eyebrow reveal">Invitation</p>
         <h1 class="display" id="invite-title" data-split>관객보다 먼저,<br>〈라파엘〉을<br><strong>만나 주십시오</strong></h1>
-        <p class="lede reveal">오는 <em>11월 18일</em>, 정식 개봉에 앞서 귀한 분들을 시사회에 모시고 100% 생성형 AI 기술로 완성한 영화 〈라파엘〉을 함께 나누고자 합니다. 바쁘시더라도 부디 자리를 빛내 주시기 바랍니다.</p>
+        <p class="lede reveal">정식 개봉에 앞서 귀한 분들을 시사회에 모시고 100% 생성형 AI 기술로 완성한 영화 〈라파엘〉을 함께 나누고자 합니다.<br>바쁘시더라도 부디 자리를 빛내 주시기 바랍니다.</p>
         <p class="lede lede--sign reveal">마테오AI스튜디오 · MBC C&amp;I AI Contents Lab 드림</p>
       </div>
       <div class="invite__aside">
@@ -537,7 +537,7 @@ legend .opt{ font-size:12px; color:var(--muted); letter-spacing:.06em; margin-le
             <iconify-icon icon="solar:ticket-linear" aria-hidden="true"></iconify-icon>
             <div>
               <span class="t-label">입장</span>
-              <span class="t-date">상영 30분 전부터 입장</span>
+              <span class="t-date">상영 1시간 전부터 티켓 배부</span>
               <span class="t-note">현장 데스크에서 성함 확인 후 좌석을 안내해 드립니다</span>
             </div>
           </li>
@@ -557,7 +557,7 @@ legend .opt{ font-size:12px; color:var(--muted); letter-spacing:.06em; margin-le
       <div class="rsvp__head">
         <p class="eyebrow reveal">RSVP</p>
         <h2 class="display" id="rsvp-title" data-split>시사회 참석 여부 회신</h2>
-        <p class="lede reveal">참석하실 분의 성함, 연락처, 이메일을 남겨 주세요. 동행하실 분이 있다면 함께 등록하실 수 있습니다. 입력하신 정보는 참석 확인과 좌석 준비에만 사용됩니다.</p>
+        <p class="lede reveal">참석하실 분의 성함, 연락처, 이메일을 남겨 주세요.<br>동행하실 분이 있다면 함께 등록하실 수 있습니다. 입력하신 정보는 참석 확인과 좌석 준비에만 사용됩니다.</p>
       </div>
 
       <form class="form reveal" id="rsvp-form" novalidate>
@@ -627,8 +627,8 @@ legend .opt{ font-size:12px; color:var(--muted); letter-spacing:.06em; margin-le
         <div class="film__intro reveal">
           <div class="film__intro-text">
             <h3 class="film__intro-title">AI 기술력이 증명한 차세대 시네마</h3>
-            <p>100% 생성형 AI 기술로 거대한 미래 세계관을 구현한 극장용 상업 장편영화.</p>
-            <p>1년 2개월간 컷 단위의 정교한 이미지 및 영상 후보정을 거쳐 캐릭터의 일관성과 밀도 높은 미장센을 완성하다.</p>
+            <p>100% 생성형 AI 기술로 거대한 미래 세계관을 구현한 상업 장편영화.</p>
+            <p>총 제작기간 2년. 컷 단위의 정교한 이미지 및 영상 후보정을 거쳐 캐릭터의 일관성과 밀도 높은 미장센을 완성하다.</p>
           </div>
           <ul class="film__awards">
             <li>문화체육관광부 주최 · 한국콘텐츠진흥원 주관<br>2025 AI 영상제작지원사업 선정</li>
@@ -649,7 +649,7 @@ legend .opt{ font-size:12px; color:var(--muted); letter-spacing:.06em; margin-le
         </picture>
       </figure>
       <div class="film__right">
-        <h2 class="synopsis__open" id="film-title" data-split>2050년, 기후 재난과 전쟁으로 무너진 세계.</h2>
+        <h2 class="synopsis__open" id="film-title" data-split>2050년, 기후 재난과 전쟁으로 무너진 세계</h2>
         <div class="synopsis reveal">
           <p>허가 없이 태어난 아이는 즉시 사살되는 폐쇄 구역 ‘델모르’.<br> 독재자의 젊은 시절을 본떠 만든 전쟁 병기 안드로이드 ‘알렉세이’는<br> 감정 수치가 오르는 순간 폐기될 운명이다.<br> 그러나 미등록자 소녀 소피아와 마지막 신부 미카엘을 만난 뒤,<br> 그는 잊고 있던 인간성과 구원에 대한 갈망에 눈뜬다.</p>
         </div>
