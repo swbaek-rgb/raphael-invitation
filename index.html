@@ -370,6 +370,21 @@ legend .opt{ font-size:12px; color:var(--muted); letter-spacing:.06em; margin-le
 .success .summary{ margin:20px 0 0; padding:18px; border:1px solid var(--line); border-radius:6px; font-size:14px; display:grid; gap:6px; }
 .success .summary span{ color:var(--muted); font-size:12px; letter-spacing:.08em; margin-right:8px; }
 
+/* RSVP closed state */
+.closed-note{ display:none; margin:0; font-size:14px; line-height:1.7; color:var(--gold); text-align:center; letter-spacing:.01em; }
+.rsvp-closed .closed-note{ display:block; }
+@media (min-width:900px){ .closed-note--form .m-only{ display:none; } }
+.rsvp-closed .btn-primary, .rsvp-closed .btn-primary:hover{
+  background:#2b2721; color:#8e8370; box-shadow:none; cursor:not-allowed; pointer-events:none;
+  border:1px solid rgba(226,194,133,.12);
+}
+.rsvp-closed .btn-primary::before{ display:none; }
+.rsvp-closed .btn-primary iconify-icon{ opacity:.5; }
+.rsvp-closed .cta-strip__note{ display:none; }
+.rsvp-closed .form fieldset{ opacity:.4; pointer-events:none; }
+.rsvp-closed .consent, .rsvp-closed .form__status{ display:none; }
+.rsvp-closed .fab{ display:none !important; }
+
 /* floating RSVP button */
 .fab{
   position:fixed; z-index:60; right:calc(16px + env(safe-area-inset-right)); bottom:calc(18px + env(safe-area-inset-bottom));
@@ -446,7 +461,7 @@ legend .opt{ font-size:12px; color:var(--muted); letter-spacing:.06em; margin-le
 }
 </style>
 </head>
-<body>
+<body class="rsvp-closed"><!-- 접수 마감: class="rsvp-closed" 를 지우면 다시 접수 가능 -->
 <a class="skip" href="#invite">본문으로 건너뛰기</a>
 
 <header class="topbar">
@@ -520,6 +535,7 @@ legend .opt{ font-size:12px; color:var(--muted); letter-spacing:.06em; margin-le
         <span class="lbl">시사회 참석 여부 회신하기</span>
         <iconify-icon icon="solar:arrow-right-down-linear" aria-hidden="true"></iconify-icon>
       </a>
+      <p class="closed-note reveal">좌석이 한정되어 있어 참석 등록을 마감하였습니다.<br>보내주신 관심에 감사드립니다.</p>
       <p class="cta-strip__note reveal"><span class="en">11.18</span> (수) 오후 7:40 · 롯데시네마 월드타워 · 동반 2인까지</p>
     </div>
   </section>
@@ -625,6 +641,7 @@ legend .opt{ font-size:12px; color:var(--muted); letter-spacing:.06em; margin-le
             <span class="lbl">회신하기</span>
             <iconify-icon icon="solar:arrow-right-linear" aria-hidden="true"></iconify-icon>
           </button>
+          <p class="closed-note closed-note--form">좌석이 한정되어 있어 참석 등록을 마감하였습니다.<br class="m-only">보내주신 관심에 감사드립니다.</p>
         </div>
       </form>
 
@@ -1011,6 +1028,15 @@ window.addEventListener('DOMContentLoaded', () => {
   };
   form.querySelectorAll('.field input').forEach(bindField);
 
+  // 접수 마감 상태
+  const RSVP_CLOSED = document.body.classList.contains('rsvp-closed');
+  if (RSVP_CLOSED) {
+    submitBtn.disabled = true; submitBtn.setAttribute('aria-disabled', 'true');
+    form.querySelectorAll('fieldset').forEach(f => { f.disabled = true; });
+    const ctaBtn = document.querySelector('.btn-primary--cta');
+    if (ctaBtn) { ctaBtn.removeAttribute('href'); ctaBtn.setAttribute('aria-disabled', 'true'); ctaBtn.setAttribute('role', 'button'); }
+  }
+
   const renumber = () => {
     [...list.children].forEach((c, i) => {
       c.querySelector('.idx').textContent = String(i + 1).padStart(2, '0');
@@ -1056,6 +1082,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
+    if (RSVP_CLOSED) return;
     setStatus('');
     const inviteeName = document.getElementById('inv-name');
     const inviteePhone = document.getElementById('inv-phone');
@@ -1121,7 +1148,7 @@ window.addEventListener('DOMContentLoaded', () => {
   const fab = document.getElementById('fab');
   const rsvpSec = document.getElementById('rsvp');
   let heroPassed = false, rsvpInView = false;
-  const updateFab = () => fab.classList.toggle('is-visible', heroPassed && !rsvpInView);
+  const updateFab = () => fab.classList.toggle('is-visible', !RSVP_CLOSED && heroPassed && !rsvpInView);
   new IntersectionObserver(([en]) => { heroPassed = !en.isIntersecting && en.boundingClientRect.bottom < 0; updateFab(); }, { threshold: 0 }).observe(hero);
   new IntersectionObserver(([en]) => { rsvpInView = en.isIntersecting; updateFab(); }, { threshold: 0.15 }).observe(rsvpSec);
   fab.addEventListener('click', (e) => {
